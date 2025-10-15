@@ -45,18 +45,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-magical-pink/20">
+      <nav className="fixed top-0 left-0 right-0 bg-magical-beige/95 backdrop-blur-sm z-50 border-b border-magical-orange/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl md:text-3xl font-heading text-magical-pink">
-              Волшебные Сказки
+            <h1 className="text-3xl md:text-4xl font-heading font-bold text-magical-orange tracking-wide">
+              СМЕРТ-ШКОЛА
             </h1>
             <div className="hidden md:flex gap-6">
               {['Главная', 'Сказки', 'Мультфильмы', 'Галерея', 'Заказать', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-700 hover:text-magical-purple transition-colors font-semibold"
+                  className="text-gray-700 hover:text-magical-orange transition-colors font-semibold"
                 >
                   {item}
                 </button>
@@ -71,95 +71,96 @@ const Index = () => {
 
       <section id="главная" className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h2 className="text-4xl md:text-6xl font-heading text-magical-purple leading-tight">
-                Добро пожаловать в мир волшебных сказок!
-              </h2>
-              <p className="text-xl md:text-2xl text-gray-700 font-semibold">
-                Тут каждая история — о тебе!
-              </p>
-              <p className="text-lg text-gray-600">
-                Погружайся в увлекательные приключения, которые ты захочешь смотреть и читать снова и снова.
-              </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button
-                  size="lg"
-                  onClick={() => scrollToSection('заказать')}
-                  className="bg-magical-pink hover:bg-magical-pink/90 text-white font-bold text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                >
-                  Создать свою сказку
-                  <Icon name="Sparkles" className="ml-2" size={20} />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => scrollToSection('галерея')}
-                  className="border-2 border-magical-purple text-magical-purple font-bold text-lg px-8 py-6 rounded-full hover:bg-magical-purple hover:text-white transition-all"
-                >
-                  Посмотреть примеры
-                </Button>
+          <h2 className="text-5xl md:text-7xl font-heading font-bold text-magical-orange mb-16 text-center leading-tight">
+            СМЕРТЬ-ШКОЛА
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="bg-magical-yellow p-8 rounded-3xl shadow-xl rotate-[-3deg] hover:rotate-0 transition-transform border-0">
+              <div className="aspect-[4/3] bg-white/50 rounded-2xl mb-4 overflow-hidden">
+                <img src={stories[0].image} alt="Сказки" className="w-full h-full object-cover" />
               </div>
-            </div>
-            <div className="relative animate-scale-in">
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-magical-yellow/30 rounded-full blur-3xl animate-float"></div>
-              <div className="absolute -bottom-4 -right-4 w-40 h-40 bg-magical-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-              <img
-                src="https://cdn.poehali.dev/projects/484da713-b6f9-4b91-a226-d2dfdcc59da1/files/95ca9093-ed4a-4eff-a3bb-6e6d7d0b9a48.jpg"
-                alt="Волшебная история"
-                className="rounded-3xl shadow-2xl relative z-10 w-full"
-              />
-            </div>
+              <div className="bg-magical-orange/20 text-magical-orange px-3 py-1 rounded-full text-sm font-bold mb-3 inline-block">
+                от 3 лет
+              </div>
+              <p className="text-gray-800 font-semibold">
+                Создаём волшебные персонализированные истории с вашим ребёнком в главной роли
+              </p>
+            </Card>
+            <Card className="bg-white p-8 rounded-3xl shadow-xl rotate-[2deg] hover:rotate-0 transition-transform border-2 border-magical-orange/20">
+              <div className="aspect-[4/3] bg-magical-beige rounded-2xl mb-4 overflow-hidden">
+                <img src={stories[1].image} alt="Мультфильмы" className="w-full h-full object-cover" />
+              </div>
+              <p className="text-gray-800 font-semibold">
+                Анимированные приключения, где главный герой — ваш малыш
+              </p>
+            </Card>
+            <Card className="bg-magical-pink p-8 rounded-3xl shadow-xl rotate-[-2deg] hover:rotate-0 transition-transform border-0">
+              <div className="bg-white/90 rounded-2xl p-6 mb-4">
+                <p className="text-gray-800 text-sm leading-relaxed">
+                  Детский развивающий центр работает в направлении развития ребёнка, ориентируется на личность каждого воспитанника.
+                </p>
+              </div>
+              <Button className="w-full bg-white hover:bg-white/90 text-magical-pink font-bold rounded-full">
+                Записаться
+              </Button>
+            </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-r from-magical-pink/10 via-magical-purple/10 to-magical-turquoise/10">
-        <div className="container mx-auto max-w-6xl text-center">
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-6xl font-heading font-bold text-magical-orange mb-12 leading-tight">
+            что такое<br />СМЕРТЬ-ШКОЛА?
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: 'BookOpen', title: 'Уникальные Сказки', text: 'Каждая история создаётся специально для вашего ребёнка' },
-              { icon: 'Film', title: 'Яркие Мультфильмы', text: 'Персонализированные анимационные истории' },
-              { icon: 'Heart', title: 'С Любовью', text: 'Волшебство, созданное для самых дорогих людей' }
-            ].map((item, idx) => (
-              <Card key={idx} className="p-8 bg-white/80 backdrop-blur-sm border-2 border-magical-yellow/30 rounded-3xl hover:shadow-xl transition-all animate-fade-in hover:scale-105" style={{ animationDelay: `${idx * 0.2}s` }}>
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-magical-pink to-magical-purple rounded-full flex items-center justify-center">
-                  <Icon name={item.icon as any} size={32} className="text-white" />
+            <div className="relative">
+              <div className="w-48 h-48 bg-magical-yellow rounded-full flex items-center justify-center shadow-xl rotate-[-5deg] hover:rotate-0 transition-transform">
+                <div className="text-center">
+                  <div className="text-5xl font-heading font-bold text-white mb-1">85%</div>
+                  <div className="text-sm text-white font-semibold px-4">детей с радостью<br />ходят к нам</div>
                 </div>
-                <h3 className="text-2xl font-heading text-magical-purple mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.text}</p>
-              </Card>
-            ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="w-48 h-48 bg-magical-pink rounded-full flex items-center justify-center shadow-xl rotate-[3deg] hover:rotate-0 transition-transform">
+                <div className="text-center">
+                  <div className="text-5xl font-heading font-bold text-white mb-1">80%</div>
+                  <div className="text-sm text-white font-semibold px-4">родителей<br />довольны</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="w-48 h-48 bg-magical-blue rounded-full flex items-center justify-center shadow-xl rotate-[-2deg] hover:rotate-0 transition-transform">
+                <div className="text-center">
+                  <div className="text-5xl font-heading font-bold text-white mb-1">75%</div>
+                  <div className="text-sm text-white font-semibold px-4">легко учатся<br />в школе</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="сказки" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-heading text-center text-magical-purple mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-magical-orange mb-12">
             Наши Сказки
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
-            Истории, которые оживают на страницах книг
-          </p>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title: 'Приключения в Сказочном Лесу', age: '3-6 лет', desc: 'Путешествие с лесными друзьями' },
-              { title: 'Космическая Одиссея', age: '7-10 лет', desc: 'Полёт к далёким звёздам' },
-              { title: 'Секреты Волшебного Замка', age: '5-8 лет', desc: 'Загадки древнего королевства' },
-              { title: 'Морские Приключения', age: '4-7 лет', desc: 'Погружение в подводный мир' }
+              { title: 'Приключения в Сказочном Лесу', age: '3-6 лет', color: 'bg-magical-green' },
+              { title: 'Космическая Одиссея', age: '7-10 лет', color: 'bg-magical-blue' },
+              { title: 'Секреты Волшебного Замка', age: '5-8 лет', color: 'bg-magical-pink' },
+              { title: 'Морские Приключения', age: '4-7 лет', color: 'bg-magical-yellow' }
             ].map((story, idx) => (
-              <Card key={idx} className="overflow-hidden bg-white rounded-3xl border-2 border-magical-turquoise/30 hover:shadow-2xl transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: `${idx * 0.15}s` }}>
-                <div className="h-48 bg-gradient-to-br from-magical-yellow/40 via-magical-pink/40 to-magical-purple/40 flex items-center justify-center">
-                  <Icon name="BookOpen" size={64} className="text-white" />
-                </div>
-                <div className="p-6">
-                  <div className="inline-block bg-magical-yellow/20 text-magical-purple px-3 py-1 rounded-full text-sm font-semibold mb-3">
+              <Card key={idx} className={`overflow-hidden ${story.color} rounded-3xl border-0 shadow-xl hover:shadow-2xl transition-all hover:scale-105 rotate-[-1deg] hover:rotate-0`} style={{ animationDelay: `${idx * 0.15}s` }}>
+                <div className="p-8">
+                  <div className="inline-block bg-white/90 text-gray-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
                     {story.age}
                   </div>
-                  <h3 className="text-2xl font-heading text-magical-purple mb-2">{story.title}</h3>
-                  <p className="text-gray-600 mb-4">{story.desc}</p>
-                  <Button className="w-full bg-magical-turquoise hover:bg-magical-turquoise/90 text-white rounded-full font-bold">
+                  <h3 className="text-2xl font-heading font-bold text-white mb-4">{story.title}</h3>
+                  <Button className="bg-white hover:bg-white/90 text-gray-800 rounded-full font-bold">
                     Узнать больше
                   </Button>
                 </div>
@@ -169,31 +170,28 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="мультфильмы" className="py-20 px-4 bg-gradient-to-br from-magical-purple/10 to-magical-pink/10">
+      <section id="мультфильмы" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-heading text-center text-magical-purple mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-magical-orange mb-12">
             Наши Мультфильмы
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
-            Анимационные истории с вашими любимыми героями
-          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: 'Волшебный День Рождения', duration: '5 мин' },
               { title: 'Приключения Супергероя', duration: '7 мин' },
               { title: 'Путешествие в Страну Мечты', duration: '6 мин' }
             ].map((cartoon, idx) => (
-              <Card key={idx} className="overflow-hidden bg-white rounded-3xl border-2 border-magical-pink/30 hover:shadow-2xl transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: `${idx * 0.15}s` }}>
-                <div className="aspect-video bg-gradient-to-br from-magical-turquoise/40 to-magical-purple/40 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                    <Icon name="Play" size={36} className="text-magical-purple ml-1" />
+              <Card key={idx} className="overflow-hidden bg-white rounded-3xl border-2 border-magical-orange/20 shadow-xl hover:shadow-2xl transition-all hover:scale-105 rotate-[1deg] hover:rotate-0" style={{ animationDelay: `${idx * 0.15}s` }}>
+                <div className="aspect-video bg-gradient-to-br from-magical-yellow/40 to-magical-orange/40 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <Icon name="Play" size={36} className="text-magical-orange ml-1" />
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="inline-block bg-magical-pink/20 text-magical-pink px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                  <div className="inline-block bg-magical-orange/20 text-magical-orange px-3 py-1 rounded-full text-sm font-bold mb-3">
                     {cartoon.duration}
                   </div>
-                  <h3 className="text-xl font-heading text-magical-purple">{cartoon.title}</h3>
+                  <h3 className="text-xl font-heading font-bold text-gray-800">{cartoon.title}</h3>
                 </div>
               </Card>
             ))}
@@ -203,15 +201,12 @@ const Index = () => {
 
       <section id="галерея" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-heading text-center text-magical-purple mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-magical-orange mb-12">
             Галерея Волшебства
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
-            Примеры наших работ
-          </p>
           <div className="grid md:grid-cols-3 gap-6">
             {stories.map((story, idx) => (
-              <Card key={idx} className="overflow-hidden bg-white rounded-3xl border-2 border-magical-yellow/30 hover:shadow-2xl transition-all hover:scale-105 animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <Card key={idx} className="overflow-hidden bg-white rounded-3xl border-0 shadow-xl hover:shadow-2xl transition-all hover:scale-105 rotate-[-2deg] hover:rotate-0" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={story.image}
@@ -220,10 +215,10 @@ const Index = () => {
                   />
                 </div>
                 <div className="p-5">
-                  <div className="inline-block bg-magical-purple/20 text-magical-purple px-3 py-1 rounded-full text-sm font-semibold mb-2">
+                  <div className="inline-block bg-magical-orange/20 text-magical-orange px-3 py-1 rounded-full text-sm font-bold mb-2">
                     {story.age}
                   </div>
-                  <h3 className="text-lg font-heading text-magical-purple mb-2">{story.title}</h3>
+                  <h3 className="text-lg font-heading font-bold text-gray-800 mb-2">{story.title}</h3>
                   <p className="text-gray-600 text-sm">{story.description}</p>
                 </div>
               </Card>
@@ -232,13 +227,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="заказать" className="py-20 px-4 bg-gradient-to-br from-magical-yellow/20 via-magical-pink/20 to-magical-purple/20">
+      <section id="заказать" className="py-20 px-4 bg-magical-pink/20">
         <div className="container mx-auto max-w-2xl">
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-magical-pink/30 animate-scale-in">
-            <h2 className="text-4xl md:text-5xl font-heading text-center text-magical-purple mb-4">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-0 animate-scale-in">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-magical-orange mb-4">
               Заказать Сказку
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-gray-700 mb-8 text-lg">
               Создайте уникальную историю для вашего ребёнка
             </p>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -250,7 +245,7 @@ const Index = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Например: Маша"
-                  className="rounded-2xl border-2 border-magical-purple/30 focus:border-magical-purple"
+                  className="rounded-2xl border-2 border-magical-orange/30 focus:border-magical-orange"
                 />
               </div>
               <div>
@@ -261,7 +256,7 @@ const Index = () => {
                   value={formData.age}
                   onChange={(e) => setFormData({ ...formData, age: e.target.value })}
                   placeholder="Например: 5 лет"
-                  className="rounded-2xl border-2 border-magical-purple/30 focus:border-magical-purple"
+                  className="rounded-2xl border-2 border-magical-orange/30 focus:border-magical-orange"
                 />
               </div>
               <div>
@@ -273,7 +268,7 @@ const Index = () => {
                   onChange={(e) => setFormData({ ...formData, preferences: e.target.value })}
                   placeholder="Расскажите о любимых героях, интересах, мечтах..."
                   rows={4}
-                  className="rounded-2xl border-2 border-magical-purple/30 focus:border-magical-purple"
+                  className="rounded-2xl border-2 border-magical-orange/30 focus:border-magical-orange"
                 />
               </div>
               <div>
@@ -285,12 +280,12 @@ const Index = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="your@email.com"
-                  className="rounded-2xl border-2 border-magical-purple/30 focus:border-magical-purple"
+                  className="rounded-2xl border-2 border-magical-orange/30 focus:border-magical-orange"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-magical-pink hover:bg-magical-pink/90 text-white font-bold text-lg py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="w-full bg-magical-orange hover:bg-magical-orange/90 text-white font-bold text-lg py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
                 Создать волшебство
                 <Icon name="Wand2" className="ml-2" size={20} />
@@ -301,23 +296,18 @@ const Index = () => {
       </section>
 
       <section id="контакты" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-heading text-magical-purple mb-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-magical-orange mb-12">
             Свяжитесь с нами
           </h2>
-          <p className="text-gray-600 mb-8 text-lg">
-            Готовы ответить на все ваши вопросы
-          </p>
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: 'Mail', text: 'info@magical-stories.com', color: 'magical-pink' },
-              { icon: 'Phone', text: '+7 (999) 123-45-67', color: 'magical-purple' },
-              { icon: 'MapPin', text: 'Москва, Сказочная улица, 123', color: 'magical-turquoise' }
+              { icon: 'Mail', text: 'info@magical-stories.com' },
+              { icon: 'Phone', text: '+7 (999) 123-45-67' },
+              { icon: 'MapPin', text: 'Москва, Сказочная улица, 123' }
             ].map((contact, idx) => (
-              <div key={idx} className="flex items-center gap-3 bg-white px-6 py-4 rounded-full shadow-lg border-2 border-magical-yellow/30 animate-fade-in hover:scale-105 transition-transform" style={{ animationDelay: `${idx * 0.15}s` }}>
-                <div className={`w-10 h-10 bg-${contact.color}/20 rounded-full flex items-center justify-center`}>
-                  <Icon name={contact.icon as any} size={20} className={`text-${contact.color}`} />
-                </div>
+              <div key={idx} className="flex items-center gap-3 bg-white px-6 py-4 rounded-full shadow-lg border-0 hover:scale-105 transition-transform">
+                <Icon name={contact.icon as any} size={20} className="text-magical-orange" />
                 <span className="font-semibold text-gray-700">{contact.text}</span>
               </div>
             ))}
@@ -325,7 +315,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-magical-purple/10 py-8 px-4 border-t-2 border-magical-pink/20">
+      <footer className="bg-magical-orange/10 py-8 px-4 border-t-2 border-magical-orange/20">
         <div className="container mx-auto max-w-6xl text-center">
           <p className="text-gray-600">
             © 2024 Волшебные Сказки. Создаём мечты для детей ✨

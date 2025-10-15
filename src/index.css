@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Rounded+Mplus+1c:wght@400;500;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 20%;
+    --background: 40 50% 95%;
+    --foreground: 25 40% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 20%;
+    --card-foreground: 25 40% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 20%;
+    --popover-foreground: 25 40% 25%;
 
-    --primary: 348 100% 70%;
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 67% 67%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 340 80% 75%;
+    --secondary-foreground: 25 40% 25%;
 
-    --muted: 240 40% 96%;
-    --muted-foreground: 240 5% 46%;
+    --muted: 40 40% 90%;
+    --muted-foreground: 25 20% 50%;
 
-    --accent: 48 100% 62%;
-    --accent-foreground: 240 10% 20%;
+    --accent: 48 95% 60%;
+    --accent-foreground: 25 40% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -98,7 +98,7 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-pink-50 via-purple-50 to-cyan-50 text-foreground font-body;
+    @apply bg-[#F5EFE7] text-foreground font-body;
   }
 
   h1,

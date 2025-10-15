@@ -19,16 +19,17 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				heading: ['Fredoka One', 'cursive'],
-				body: ['Nunito', 'sans-serif']
+				heading: ['Fredoka', 'cursive'],
+				body: ['Rounded Mplus 1c', 'sans-serif']
 			},
 			colors: {
 				magical: {
-					pink: '#FF6B9D',
-					yellow: '#FFD93D',
-					purple: '#6C63FF',
-					turquoise: '#5CE1E6',
-					coral: '#FFA07A'
+					orange: '#E87536',
+					pink: '#F5A5C8',
+					yellow: '#F5CD5E',
+					beige: '#F5EFE7',
+					blue: '#6DCDDD',
+					green: '#A8D86E'
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
